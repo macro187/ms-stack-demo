@@ -1,0 +1,132 @@
+@using System.Globalization
+
+
+@model Course
+
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+
+@section Head {
+    <style>
+        .course-name,
+        .course-description
+        {
+            width: 100%;
+        }
+    </style>
+}
+
+
+@section First {
+    @{ Html.BeginForm(); }
+}
+
+
+@section Title {
+    @Html.TextBoxFor(c => c.Name, new { @class = "course-name", placeholder = "(name required)" })
+}
+
+
+@Html.ValidationMessageFor(c => c.Name)
+
+
+@Html.ValidationSummary()
+
+
+<section>
+    <p>
+        <td>@Html.TextAreaFor(c => c.Description, 5, 80, new { @class = "course-description", placeholder = "(no description)" })</td>
+    </p>
+</section>
+@Html.ValidationMessageFor(c => c.Description)
+
+
+<section>
+    <table>
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(c => c.Cost)</th>
+                <td>
+                    $@Html.TextBoxFor(c => c.Cost, "{0:F2}", new { placeholder = "(required)" })
+                    @Html.ValidationMessageFor(c => c.Cost)
+                </td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(c => c.Duration)</th>
+                <td>@("day".ToQuantity(Model.Duration))</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(c => c.Created)</th>
+                <td>@Model.Created.UtcDateTime.Humanize()</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(c => c.Modified)</th>
+                <td>@Model.Modified.UtcDateTime.Humanize()</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+@if (ViewBag.Creating) {
+    <input type="submit" name="action" value="Create"/>
+} else {
+    <input type="submit" name="action" value="Update"/>
+}
+
+@if (ViewBag.Creating || ViewBag.Updating) {
+    <input type="submit" name="action" value="Cancel"/>
+} else {
+    <input type="submit" name="action" value="Delete"/>
+    @Html.ActionLink("Back to Courses", "Index")
+}
+
+
+@if (!(ViewBag.Creating || ViewBag.Updating)) {
+    <section>
+        <table>
+            <caption>@Html.DisplayNameFor(c => c.Modules)</caption>
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(c => c.Modules.First().Name)</th>
+                    <th>@Html.DisplayNameFor(c => c.Modules.First().Duration)</th>
+                    <th>@Html.DisplayNameFor(c => c.Modules.First().Created)</th>
+                    <th>@Html.DisplayNameFor(c => c.Modules.First().Modified)</th>
+                    <th/>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5">
+                        @Html.ActionLink("Create...", "Module", new { courseName = Model.Name })
+                    </td>
+                </tr>
+                @foreach (var module in Model.Modules) {
+                    <tr>
+                        <td>@Html.ActionLink(module.Name, "Module", new { courseName = Model.Name, moduleName = module.Name })</td>
+                        <td>@("day".ToQuantity(module.Duration))</td>
+                        <td>@module.Created.UtcDateTime.Humanize()</td>
+                        <td>@module.Modified.UtcDateTime.Humanize()</td>
+                        <td>
+                            <em>@((DateTimeOffset.Now - module.Created).TotalDays < 7 ? "new" : "")</em>
+                        </td>
+                    </tr>
+                }
+                @if (Model.Modules.Count == 0) {
+                    <tr>
+                        <td colspan="5"><small>(no modules)</small></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+}
+
+
+@section Last {
+    @{ Html.EndForm(); }
+}
+

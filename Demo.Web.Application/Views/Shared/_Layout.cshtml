@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="UTF-8"/>
+
+<title>@ViewBag.Title</title>
+
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="//normalize-css.googlecode.com/svn/trunk/normalize.css"/>
+
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="@Url.Content("~/Content/Site.css")"/>
+
+@RenderSection("Head", false)
+
+
+</head>
+<body>
+
+
+@RenderSection("First", false)
+
+
+<header>
+    <h1>
+        @if (IsSectionDefined("Title")) {
+            @RenderSection("Title", false)
+        }
+        else
+        {
+            @ViewBag.Title
+        }
+    </h1>
+</header>
+
+
+<div class="body">
+@RenderBody()
+</div>
+
+
+@RenderSection("Last", false)
+
+
+</body>
+</html>
+

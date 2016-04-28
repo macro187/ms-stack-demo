@@ -1,0 +1,84 @@
+@model Module
+
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+
+@section Head {
+    <style>
+        .module-name,
+        .module-description
+        {
+            width: 100%;
+        }
+    </style>
+}
+
+
+@section First {
+    @{ Html.BeginForm(); }
+}
+
+
+@section Title {
+    @Html.TextBoxFor(m => m.Name, new { @class = "module-name", placeholder = "(name required)" })
+}
+
+
+@Html.ValidationMessageFor(m => m.Name)
+
+
+@Html.ValidationSummary()
+
+
+<section>
+    <p>
+        <td>@Html.TextAreaFor(m => m.Description, 5, 80, new { @class = "module-description", placeholder = "(no description)" })</td>
+    </p>
+</section>
+@Html.ValidationMessageFor(m => m.Description)
+
+
+<section>
+    <table>
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.Duration)</th>
+                <td>
+                    @Html.TextBoxFor(m => m.Duration, new { placeholder = "(required)" }) day(s)
+                    @Html.ValidationMessageFor(m => m.Duration)
+                </td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.Created)</th>
+                <td>@Model.Created.UtcDateTime.Humanize()</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.Modified)</th>
+                <td>@Model.Modified.UtcDateTime.Humanize()</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+@if (ViewBag.Creating) {
+    <input type="submit" name="action" value="Create"/>
+} else {
+    <input type="submit" name="action" value="Update"/>
+}
+
+@if (ViewBag.Creating || ViewBag.Updating) {
+    <input type="submit" name="action" value="Cancel"/>
+} else {
+    <input type="submit" name="action" value="Delete"/>
+    @Html.ActionLink("Back to Course", "Course", new { courseName = Model.Course.Name })
+}
+
+
+@section Last {
+    @{ Html.EndForm(); }
+}
+

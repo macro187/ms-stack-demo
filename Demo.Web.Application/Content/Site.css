@@ -1,0 +1,126 @@
+/*
+ * Soft black
+ */
+body,
+a:link,
+a:visited,
+a:hover,
+a:active
+{
+    color: #333;
+}
+
+
+body
+{
+    font-family: Segoe UI, Helvetica, Arial, sans-serif;
+    margin: 0px;
+}
+
+
+header
+{
+    background-color: #CCC;
+}
+
+
+header,
+.body
+{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+
+.body
+{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+
+h1
+{
+    font-weight: lighter;
+}
+
+
+section
+{
+    margin: 1em 0px;
+}
+
+
+h1:first-child,
+p:first-child,
+section:first-child
+{
+    margin-top: 0px;
+}
+h1:last-child,
+p:last-child,
+section:last-child
+{
+    margin-bottom: 0px;
+}
+
+
+table>caption
+{
+    text-align: left;
+}
+
+table,
+td,
+th
+{
+    border: 1px solid #888;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+td,
+th
+{
+    text-align: left;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+th
+{
+    background-color: #CCC;
+    font-weight: inherit;
+}
+
+td
+{
+    background-color: #EEE;
+}
+
+
+small
+{
+    color: #888;
+}
+
+
+textarea,
+input
+{
+   font-family:inherit;
+   font-size:inherit;
+   padding-left: 0.25em;
+   padding-right: 0.25em;
+   box-sizing: border-box;
+}
+
+input
+{
+   margin-bottom: 0.25em;
+   margin-top: 0.25em;
+}
+
