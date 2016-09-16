@@ -27,5 +27,5 @@ DOTNETREFERENCES_proj += Demo.Courses
 
 DOTNET_mingeneration = 40
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

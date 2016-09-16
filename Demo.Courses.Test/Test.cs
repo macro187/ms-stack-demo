@@ -15,7 +15,7 @@
 // -----------------------------------------------------------------------------
 
 
-using Com.Halfdecent.Testing;
+using Halfdecent.Testing;
 
 
 namespace

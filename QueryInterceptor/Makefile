@@ -22,5 +22,4 @@ NUGETASSEMBLY_path = /lib/net40
 NUGETASSEMBLY_primaryfile = QueryInterceptor.dll
 
 
-include $(MAKERY)/makery.mk
-
+include $(MAKERY)/makery-project.mk

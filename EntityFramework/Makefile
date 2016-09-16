@@ -23,5 +23,5 @@ NUGETASSEMBLY_primaryfile = EntityFramework.dll
 NUGETASSEMBLY_extrafiles = EntityFramework.xml
 
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

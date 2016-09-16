@@ -17,9 +17,9 @@
 
 MODULES_use += csharp-exeproject
 
-DOTNETREFERENCES_proj += Com.Halfdecent.Testing
+DOTNETREFERENCES_proj += Halfdecent.Testing
 DOTNETREFERENCES_proj += Demo.Database
 
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

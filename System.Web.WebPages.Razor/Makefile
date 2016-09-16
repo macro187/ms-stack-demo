@@ -24,5 +24,5 @@ NUGETASSEMBLY_primaryfile = System.Web.WebPages.Razor.dll
 DOTNETREFERENCES_proj += System.Web.Razor
 DOTNETREFERENCES_proj += System.Web.WebPages
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

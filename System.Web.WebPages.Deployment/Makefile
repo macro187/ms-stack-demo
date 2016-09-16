@@ -23,5 +23,5 @@ NUGETASSEMBLY_primaryfile = System.Web.WebPages.Deployment.dll
 
 DOTNETREFERENCES_proj += Microsoft.Web.Infrastructure
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

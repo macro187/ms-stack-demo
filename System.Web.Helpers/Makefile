@@ -21,5 +21,5 @@ NUGET_packageversion = 3.2.0
 NUGETASSEMBLY_path = lib/net45
 NUGETASSEMBLY_primaryfile = System.Web.Helpers.dll
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

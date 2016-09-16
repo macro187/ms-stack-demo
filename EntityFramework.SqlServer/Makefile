@@ -25,5 +25,5 @@ NUGETASSEMBLY_extrafiles = EntityFramework.SqlServer.xml
 DOTNETREFERENCES_proj += EntityFramework
 
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

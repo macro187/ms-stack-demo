@@ -20,7 +20,7 @@ using System.Linq;
 using System.Threading;
 using System.Data.Entity;
 using EFDatabase = System.Data.Entity.Database;
-using Com.Halfdecent.Testing;
+using Halfdecent.Testing;
 using Demo.Courses;
 using Demo.Database;
 

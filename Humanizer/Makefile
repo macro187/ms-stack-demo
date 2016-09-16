@@ -22,5 +22,5 @@ NUGETASSEMBLY_path = lib/portable-win+net40+sl50+wp8+wpa81
 NUGETASSEMBLY_primaryfile = Humanizer.dll
 NUGETASSEMBLY_useallfiles = 1
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

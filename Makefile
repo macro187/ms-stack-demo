@@ -15,8 +15,5 @@
 # ------------------------------------------------------------------------------
 
 
-MODULES_use += allsubdirs
-
-
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-solution.mk
 

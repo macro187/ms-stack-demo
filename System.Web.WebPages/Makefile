@@ -25,5 +25,5 @@ DOTNETREFERENCES_proj += Microsoft.Web.Infrastructure
 DOTNETREFERENCES_proj += System.Web.Razor
 DOTNETREFERENCES_proj += System.Web.WebPages.Deployment
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 

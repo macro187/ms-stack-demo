@@ -18,7 +18,7 @@
 using System;
 using System.Linq;
 using System.Threading;
-using Com.Halfdecent.Testing;
+using Halfdecent.Testing;
 using Demo.Courses;
 
 

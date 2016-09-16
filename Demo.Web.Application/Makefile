@@ -24,5 +24,5 @@ DOTNETREFERENCES_proj += Demo.Web.Controllers
 
 DOTNET_mingeneration = 40
 
-include $(MAKERY)/makery.mk
+include $(MAKERY)/makery-project.mk
 
